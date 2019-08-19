@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Route, Link } from "react-router-dom";
+
+import Home from "./Compontents/Home";
+import AvengersList from "./Compontents/AvengersList";
+import AvengerPage from "./Compontents/AvengerPage";
+import avengers from "../src/data";
+
+import "./App.css";
 
 function App() {
+  const [avenger, setAvengers] = useState(avengers);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul className="navbar">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/avengers">Avengers</Link>
+        </li>
+      </ul>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/avengers" component={AvengersList} />
+      <Route path="/avengers/:id" component={AvengerPage} />
     </div>
   );
 }
