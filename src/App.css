@@ -25,6 +25,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
 }
 
 .navbar>li>a {
@@ -32,6 +33,7 @@ body {
   text-decoration: none;
   padding: 24px;
   height: 16px;
+  font-size: 1.2rem;
 }
 
 .navbar>li>a.activeNavButton {
@@ -143,4 +145,21 @@ body {
   border-radius: 5px;
   padding: 5px 20px;
   border: 1px solid grey;
+}
+
+.details {
+  margin-right: 20px;
+  font-size: 1.2rem;
+}
+
+.movies {
+  font-size: 1.2rem;
+}
+
+#root>div>div>div>p {
+  margin-top: 20px;
+}
+
+#root>div>div>div>div:nth-child(7) {
+  margin-top: 20px;
 }
